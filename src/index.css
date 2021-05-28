@@ -1,6 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+    font: 14px Roboto, Futura, Arial, sans-serif;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
 }
 
 ol, ul {
@@ -40,6 +51,12 @@ ol, ul {
     background: #ddd;
 }
 
+li button {
+    padding: 2px 4px;
+    margin-top: 5px;
+    width: 135px;
+}
+
 .game {
     display: flex;
     flex-direction: row;
@@ -47,4 +64,10 @@ ol, ul {
 
 .game-info {
     margin-left: 20px;
+}
+
+@media (max-width: 400px) {
+    body {
+        margin-top: 10px;
+    }
 }

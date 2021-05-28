@@ -1,7 +1,12 @@
 import React from 'react';
 import SquareValue from '../models/SquareValue';
 
-const Square: React.FC<{value: SquareValue, onClick: () => void}> = ({ value, onClick }) => (
+interface SquareProps {
+    value: SquareValue;
+    onClick: () => void
+}
+
+const Square: React.FC<SquareProps> = ({ value, onClick }) => (
   <button type="button" className="square" onClick={onClick}>
     {value}
   </button>

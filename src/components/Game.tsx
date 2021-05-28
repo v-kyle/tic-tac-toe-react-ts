@@ -10,6 +10,7 @@ const Game: React.FC = () => {
   function jumpTo(step: number) {
     setStepNumber(step);
     setXIsNext((step % 2) === 0);
+    setHistory((prevHistory) => prevHistory.slice(0, step + 1));
   }
 
   function handleClick(i: number) {
@@ -33,11 +34,11 @@ const Game: React.FC = () => {
   if (winner) {
     status = `Выиграл ${winner}`;
   } else {
-    status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+    status = `Следующий ход: ${xIsNext ? 'X' : 'O'}`;
   }
 
   const moves = copyHistory.map((_step, move) => {
-    const desc = move ? `Перейти к ходу #${move}` : 'К началу игры';
+    const desc = move ? `Перейти к ходу №${move}` : 'К началу игры';
     return (
     // eslint-disable-next-line react/no-array-index-key
       <li key={move}>
